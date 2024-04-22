@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="fixed-grid has-4-cols">
+  <div class="grid">
+    <div
+      class="cell is-col-span-1 is-row-span-2"
+      *ngFor="let item of data?.data"
+    >
+      <article class="message is-warning">
+        <div class="message-header">
+          <p>{{ item.symbol }}</p>
+        </div>
+        <div class="message-body">
+          Location: {{ item.nav.waypointSymbol }} <br />
+          Capacity: {{ item.cargo.units }} / {{ item.cargo.capacity }} <br />
+          Status: {{ item.nav.status | lowercase }} <br />
+          Fuel: {{ item.fuel.current }}
+        </div>
+      </article>
+      <br />
+    </div>
+  </div>
+</div>
+
+<router-outlet />
